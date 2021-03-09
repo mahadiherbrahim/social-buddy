@@ -11,7 +11,7 @@ const PostDetail = () => {
         fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
         .then(res => res.json())
         .then(data => setPost(data))
-    },[])
+    },[id])
 
     const [comments,setComments] = useState([]);
 
@@ -19,7 +19,7 @@ const PostDetail = () => {
         fetch(`https://jsonplaceholder.typicode.com/comments?postId:${id}`)
         .then(res => res.json())
         .then(data => setComments(data))
-    },[])
+    },[id])
 
     const postStyle ={
         border: '1px solid gray',
